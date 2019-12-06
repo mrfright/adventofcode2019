@@ -1,4 +1,4 @@
-P=advent0102
+P=advent0201
 OBJECTS=
 CFLAGS = -g -Wall -O3
 LDLIBS=

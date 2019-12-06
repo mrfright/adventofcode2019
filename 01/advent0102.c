@@ -24,8 +24,12 @@ int main(int argc, char *argv[]){
     long sum = 0;
     while((read = getline(&line, &len, fp)) != -1) {
         char *end;
-        long i = strtol(line, &end, 10) / 3 -2;
-        sum += i;
+        long i = strtol(line, &end, 10) /3 - 2;
+
+        while(i > 0) {
+            sum += i;
+            i = i / 3 -2;
+        } 
     }
     printf("%ld\n", sum);
 }
