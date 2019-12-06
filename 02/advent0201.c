@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
     ssize_t read;
     char *line = NULL;
     size_t len = 0;
-    long sum = 0;
+
     long ops[10000] = {};
     while((read = getline(&line, &len, fp)) != -1) {
         char *token = strtok(line, ",");
@@ -31,9 +31,13 @@ int main(int argc, char *argv[]){
         while(token) {
             //got an op
             char *end;
-            ops[index] = strtol(token, &end, 10);
+            ops[index++] = strtol(token, &end, 10);
             token = strtok(NULL, ",");
         }
+
+        //change for 1202 state
+        ops[1] = 12;
+        ops[2] = 2;
 
         for(int current = 0; current < index;) {
             switch(ops[current]) {
@@ -53,6 +57,6 @@ int main(int argc, char *argv[]){
             current += 4;
         }
     }
-    printf("%ld\n", sum);
+    printf("%ld\n", ops[0]);
 }
         

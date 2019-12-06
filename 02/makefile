@@ -1,6 +1,6 @@
 P=advent0201
 OBJECTS=
-CFLAGS = -g -Wall -O3
+CFLAGS = -g -Wall -O0
 LDLIBS=
 CC=c99
 
